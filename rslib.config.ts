@@ -6,11 +6,30 @@ export default defineConfig({
       format: 'esm',
       syntax: 'es2021',
       dts: true,
+      autoExtension: false,
+      output: {
+        target: 'web',
+        filename:{
+          js: '[name].mjs'
+        }
+      }
     },
     {
       format: 'cjs',
       syntax: 'es2021',
     },
+    {
+      format: 'umd',
+      syntax: 'es2021',
+      umdName: 'utilslib',
+      autoExtension: false,
+      output: {
+        target: 'web',
+        filename:{
+          js:'[name].umd.js'
+        }
+      }
+    }
   ],
   source: {
     entry: {
@@ -19,6 +38,7 @@ export default defineConfig({
   },
   output: {
     charset: 'utf8',
-    target: 'node'
+    target: 'node',
+    cleanDistPath: true
   }
 });
