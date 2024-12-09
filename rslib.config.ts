@@ -9,7 +9,7 @@ export default defineConfig({
       autoExtension: false,
       output: {
         target: 'web',
-        filename:{
+        filename: {
           js: '[name].mjs'
         }
       }
@@ -17,16 +17,18 @@ export default defineConfig({
     {
       format: 'cjs',
       syntax: 'es2021',
+      dts: true
     },
     {
       format: 'umd',
       syntax: 'es2021',
       umdName: 'utilslib',
       autoExtension: false,
+      dts: true,
       output: {
         target: 'web',
-        filename:{
-          js:'[name].umd.js'
+        filename: {
+          js: '[name].umd.js'
         }
       }
     }
